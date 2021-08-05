@@ -21,12 +21,10 @@ def contact(request):
     return render(request, "contact.html")
 
 def newghazals(request):
-    shayari=new_ghazals.objects.all()
-    return render(request, "new_ghazals.html", {'shayari':shayari})
+    return render(request, "new_ghazals.html")
 
 def famousghazals(request):
-    shayari=famous_ghazals.objects.all()
-    return render(request, "famous_ghazals.html", {'shayari':shayari})
+    return render(request, "famous_ghazals.html")
 
 def search_for(request):
     if request.method=="POST":
