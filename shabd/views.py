@@ -12,8 +12,7 @@ from .models import ghazals_home, new_ghazals, famous_ghazals
 
 
 def home(request):
-    shayari=ghazals_home.objects.all()
-    return render(request,'home.html',{'shayari':shayari})
+    return render(request,'home.html')
 
 def about(request):
     return render(request,"about.html")
