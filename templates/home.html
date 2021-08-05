@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}Home {% endblock title %}
+
+{% block body %}
+<div class="container my-4">
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" >
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/static/images/8.jfif" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 style="color:#8A5D30; font-size: 30px;">Emotions</h5>
+        <strong><p style="font-size: larger; color:#8A5D30; " >We share emotions, not our thoughts</p></strong>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/static/images/7.jfif" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 style="font-size: 30px;" >Writings</h5>
+        <strong><p style="font-size: larger;">If you want to add your writings,</br> You can add simply, by login to your account</p></strong>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/static/images/5.jfif" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 style="font-size: 30px;">Shabd</h5>
+        <strong><p style="color:black; font-size: larger;">Powered by Traufter</p></strong>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+<center>
+  <div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/5ZUA1hdOY7A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</center>
+</br>
+        <center>
+          {% for i in shayari %}
+          <div class="container" style = "float: left; width: 337px; padding: 10px 10px 10px 10px;">
+              <div class="border border-gray-200 p-6 rounded-lg">
+                <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                  </svg>
+                </div>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">{{i.name}}</h2>
+                <p class="leading-relaxed text-base">{{i.shayari}}</p>
+                <h6 class="text-lg text-gray-900 font-medium title-font mb-2">{{i.writer}}</h6>
+              </div>
+          </div>  
+          {% endfor %}
+          
+        </center>
+        </br>
+        <div class="flex flex-col text-center w-full mb-12" style="text-decoration:none;">
+          <a href="" style="text-decoration: none;" >
+            <button onclick="location.href='#top'" class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg" style="background-color:#BAB2B5;" >Back to Top</button>
+          </a>
+        </div>
+{% endblock body %}
+
